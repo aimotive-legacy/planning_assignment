@@ -15,12 +15,12 @@ for either stopping before the intersection or for passing safely.
  - The scenario modelled is a 4 way intersection governed by the European traffic rules 
 – a vehicle must yield to other vehicles arriving from the road on its right. 
 The lanes on the incoming roads are given an id between 0 and 3 in a counter-clockwise direction,
-so the lane 1 is on the right of lane 0. 
-Each road has exactly one lane in each direction. 
+so the lane 1 is on the right of lane 0. Each road has exactly one lane in each direction. 
  - A position on the road model is given by an (x, y) coordinate pair. 
 The x axis is parallel to lanes 0 and 2, while the y axis is parallel to lanes 1 and 3. 
 The centre of the intersection is (0, 0) and the length of the roads is 50ms in each direction. 
- - In each simulation the ego vehicle starts from a random position on lane 0 with an initial velocity in the range 
+ - In each simulation the ego vehicle (represented by the pickup) starts from a random position on lane 0 
+ with an initial velocity in the range 
 [5 m/s, 15m/s]. Other vehicles are initialized at random positions on one or more of the other incoming roads.  
  - Both the ego vehicle and all other vehicles are crossing the intersection straight, 
 meaning that no vehicles make a turn in the simulation in any direction. 
