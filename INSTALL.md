@@ -20,3 +20,23 @@ Gazebo can be most easily ran on Linux (Debian/Ubuntu is the preferred distribut
         cmake ..
         make 
         ./client_controller
+
+## Windows/Mac/other Linux distributions
+
+Gazebo server can be ran on any platform supporting Docker. In this case you will not see the visualisation
+provided by Gazebo's client interface, but the simulation itself is fully functional.
+
+ - Install Docker on your operating system
+    - https://www.docker.com/get-started
+ - Change to the directory of this repository
+ - Build the container
+    - `docker build -t gazebo_assignment_app .`
+ - Run the container
+    - `docker run -it --name gazebo_assignment_container -p 11345:11345 -v "/PATH/TO/A/LOCAL/DIRECTORY:/root/.gazebo/" gazebo_assignment_app`
+    - It is recommended to mount a local directory into the container to store temporary GAzebo files, as this way
+    the model files used by the simulation are only downloaded once. Change `/PATH/TO/A/LOCAL/DIRECTORY` to a 
+    valid path on your file system in the command above.
+    - Starting the simulator for the first time takes a few minutes, as it is downloading model files. Please be patient.
+ - You can now connect to the simulator on localhost:11345. Optionally compile and run the sample client (see the code above)
+ 
+Please check out the Gazebo Docker tutorial for more information on using this setup: https://hub.docker.com/_/gazebo/ 
