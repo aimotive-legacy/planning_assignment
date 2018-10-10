@@ -57,11 +57,11 @@ the planner is received (i.e. The simulation is not real time).
  your submission – please make sure to implement at least one core part of the solution yourself (either the planner, 
  the prediction or the rule evaluation algorithm). 
  - Gazebo uses a publish-subscribe model for communication. The simulator publishes the world state on the topic 
- "~/world_state" and waits for a response on the topic "~/client_command". If no response is received within 5 seconds 
+ "\~/world_state" and waits for a response on the topic "\~/client_command". If no response is received within 5 seconds 
  then the simulator assumes that the client has disconnected and resets the world. 
  If the ego vehicle reaches its goal, collides with another car, or the maximum simulation time of 150 
  is reached then the world is reset and a new simulation begins. After every reset the simulator sends 
- a summary message on the topic "~/statistics" describing the last simulation round. Specification of the 
+ a summary message on the topic "\~/statistics" describing the last simulation round. Specification of the 
  message format can be found in the `msgs` folder.
  - Please submit the code you have developed and a short summary describing your solution (max 1 page PDF) by 
  sending a link to a shared version control repository (GitHub, BitBucket or similar provider). 
