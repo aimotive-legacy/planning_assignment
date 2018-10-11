@@ -7,6 +7,13 @@
 
 #include <gazebo/gazebo_client.hh>
 
+/**
+ * Minimal client application to connect to the simulator, receive the
+ * current world state and send the next ego vehicle velocity.
+ * You need to extend the OnWorldStateReceived function, the rest
+ * is the boilerplate code for communication.
+ */
+
 typedef const boost::shared_ptr<
         const custom_messages::WorldState>
         WorldStateRequestPtr;
@@ -46,6 +53,7 @@ class Controller {
         this->pub->WaitForConnection();
     }
 
+    // Called when the simulator resets the world after reaching the goal, running out of time or crashing
     public: void ResetWorld()
     {
         std::cout << "New simulation round started, resetting world." << std::endl;
@@ -81,16 +89,21 @@ class Controller {
                   << std::endl;
     }
 
+    // Called every time a new update is received from the simulator.
+    // This is the main function where you should implement your code
     public: void OnWorldStateReceived(WorldStateRequestPtr& msg)
     {
         PrintWorldStateMessage(msg);
 
+        // If the simulation round is different then this is a whole new setting, reinitialize the world
         if (msg->simulation_round() != simulation_round)
         {
             ResetWorld();
             simulation_round = msg->simulation_round();
         }
 
+        // Calculate the next velocity for the ego car and send the response.
+        // Implement your code here
         custom_messages::Command response_msg;
         response_msg.set_ego_car_speed(ignition::math::Rand::DblUniform(5, 15));
         response_msg.set_simulation_round(msg->simulation_round());
