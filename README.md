@@ -1,7 +1,7 @@
 # Planning and Decision Making assignment
 
 Create a planner and controller for controlling the ego vehicle in a simulated intersection scenario. 
-The ego vehicle arrives to a 4 way intersection (governed by the European traffic rules) and must yield 
+The ego vehicle arrives to a 4 way intersection (governed by the European right hand driving traffic rules) and must yield 
 to vehicles arriving on the road to its right or pass if the intersection is free. 
 The planner should decide whether it is allowed to cross the intersection, given the information about other 
 incoming vehicles (their position and speed). The controller must choose an appropriate velocity profile 
@@ -18,7 +18,7 @@ The lanes on the incoming roads are given an id between 0 and 3 in a counter-clo
 so the lane 1 is on the right of lane 0. Each road has exactly one lane in each direction. 
  - A position on the road model is given by an (x, y) coordinate pair. 
 The x axis is parallel to lanes 0 and 2, while the y axis is parallel to lanes 1 and 3. 
-The centre of the intersection is (0, 0) and the length of the roads is 50ms in each direction. 
+The centre of the intersection is (0, 0) and the length of the roads is 50 meters in each direction. 
  - In each simulation the ego vehicle (represented by the pickup) starts from a random position on lane 0 
  with an initial velocity in the range 
 [5 m/s, 15m/s]. Other vehicles are initialized at random positions on one or more of the other incoming roads.  
