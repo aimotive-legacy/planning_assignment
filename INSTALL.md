@@ -2,7 +2,9 @@
 
 ## Linux 
 
-Gazebo can be most easily ran on Linux (Debian/Ubuntu is the preferred distribution).  
+Gazebo can be most easily ran on Linux (Debian/Ubuntu is the preferred distribution).
+The plugin used was compiled on Ubuntu 18.04 LTS. If you have difficulty running the plugin,
+please let us know or use the Docker container.
 
  - Please follow the setup instructions on the Gazebo website
     - http://gazebosim.org/tutorials?tut=install_ubuntu 
