@@ -40,6 +40,8 @@ provided by Gazebo's client interface, but the simulation itself is fully functi
     the model files used by the simulation are only downloaded once. Change `/PATH/TO/A/LOCAL/DIRECTORY` to a 
     valid path on your file system in the command above.
     - Starting the simulator for the first time takes a few minutes, as it is downloading model files. Please be patient.
- - You can now connect to the simulator on localhost:11345. Optionally compile and run the sample client (see the code above)
+ - You can now connect to the simulator on localhost:11345
+ - Optionally compile and run the sample client (see the code above)
+ - Optionally install Gazebo client on your local machine and run `gzclient` to watch the simulation visualisation
  
 Please check out the Gazebo Docker tutorial for more information on using this setup: https://hub.docker.com/_/gazebo/ 
