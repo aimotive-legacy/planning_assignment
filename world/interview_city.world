@@ -36,6 +36,12 @@
             <pose>70 -70 25 0 0.3 2.3</pose>
         </camera>
     </gui>
+    <!-- Physics - ensure consistent refresh rated -->
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
 
     <!-- Road -->
     <road name="vertical_road">
