@@ -21,7 +21,8 @@ The x axis is parallel to lanes 0 and 2, while the y axis is parallel to lanes 1
 The centre of the intersection is (0, 0) and the length of the roads is 50 meters in each direction. 
  - In each simulation the ego vehicle (represented by the pickup) starts from a random position on lane 0 
  with an initial velocity in the range 
-[5 m/s, 15m/s]. Other vehicles are initialized at random positions on one or more of the lanes.  
+[5 m/s, 15m/s]. Other vehicles are initialized at random positions on one or more lanes (including the
+lane of the ego vehicle).  
  - Both the ego vehicle and all other vehicles are crossing the intersection straight, 
 meaning that no vehicles make a turn in the simulation in any direction. 
  - The simulation runs at a frequency of 10Hz (0,1s time steps). In each time step the ego vehicle 
