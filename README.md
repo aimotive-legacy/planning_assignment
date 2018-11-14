@@ -21,7 +21,7 @@ The x axis is parallel to lanes 0 and 2, while the y axis is parallel to lanes 1
 The centre of the intersection is (0, 0) and the length of the roads is 50 meters in each direction. 
  - In each simulation the ego vehicle (represented by the pickup) starts from a random position on lane 0 
  with an initial velocity in the range 
-[5 m/s, 15m/s]. Other vehicles are initialized at random positions on one or more of the other incoming roads.  
+[5 m/s, 15m/s]. Other vehicles are initialized at random positions on one or more of the lanes.  
  - Both the ego vehicle and all other vehicles are crossing the intersection straight, 
 meaning that no vehicles make a turn in the simulation in any direction. 
  - The simulation runs at a frequency of 10Hz (0,1s time steps). In each time step the ego vehicle 
@@ -40,7 +40,10 @@ the planner is received (i.e. The simulation is not real time).
  - The ego vehicle has two competing objectives that it must optimize for: 
    - Time: Minimize the time, measured by the number of simulation steps, required for crossing the intersection 
    (reaching point (30, 2)). 
-   - Comfort: Minimize the total acceleration, measured by the sum of the absolute values of the acceleration. 
+   - Comfort: Minimize the total acceleration, measured by the sum of the absolute values of the acceleration.
+ - When predicting the next state of other vehicles you must take into account that there is an interaction
+ between vehicles on the scene (all vehicles keep a distance from the vehicle ahead and yield
+ to the vehicle on their right). 
 
 
 ## Implementation and submission 
@@ -55,7 +58,7 @@ the planner is received (i.e. The simulation is not real time).
  libraries and consult online resources while working on the solution. However please note that fully offloading 
  the work to an existing planner implementation is not accepted, as it would make it difficult for us to evaluate 
  your submission – please make sure to implement at least one core part of the solution yourself (either the planner, 
- the prediction or the rule evaluation algorithm). 
+ the prediction or the rule evaluation algorithm).
  - Gazebo uses a publish-subscribe model for communication. The simulator publishes the world state on the topic 
  "\~/world_state" and waits for a response on the topic "\~/client_command". If no response is received within 5 seconds 
  then the simulator assumes that the client has disconnected and resets the world. 

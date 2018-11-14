@@ -58,7 +58,7 @@
     <!-- Ego car -->
     <model name="ego_car">
         <static>false</static>
-        <pose>-25 -2 0 0 0 0</pose>
+        <pose>-35 -2 0 0 0 0</pose>
         <link name="link">
           <collision name="ego_car_collision">
             <pose>0 0 0 0 0 -1.57079632679</pose>
@@ -134,6 +134,15 @@
       <model name="other_car6">
         <pose>-2 100 0 0 0 -1.5707</pose>
         <include>
+          <name>car_model</name>
+          <uri>model://hatchback</uri>
+          <static>false</static>
+        </include>
+      </model>
+
+      <model name="other_car7">
+        <pose>-20 -2 0 0 0 0</pose>
+         <include>
           <name>car_model</name>
           <uri>model://hatchback</uri>
           <static>false</static>

@@ -63,8 +63,11 @@ class Controller {
     {
         std::cout << "Simulation round: " << msg->simulation_round() << "; "
                   << "time: " << msg->time().sec() << "." << msg->time().nsec() << std::endl;
-        std::cout << "  ego_car p: (" << msg->ego_vehicle().position().x() << ", " << msg->ego_vehicle().position().y()
-                  << ") v: (" << msg->ego_vehicle().velocity().x() << ", " << msg->ego_vehicle().velocity().y() << "); " << std::endl;
+        std::cout << "  ego_car "
+                  << " lane id: " << msg->ego_vehicle().lane_id()
+                  << " p: (" << msg->ego_vehicle().position().x() << ", " << msg->ego_vehicle().position().y()
+                  << ") v: (" << msg->ego_vehicle().velocity().x() << ", " << msg->ego_vehicle().velocity().y() << "); "
+                  << std::endl;
         for (const auto& vehicle_msg : msg->vehicles())
         {
             std::cout << "  car id " << vehicle_msg.vehicle_id()
